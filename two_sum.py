@@ -38,7 +38,15 @@ class Solution:
             for j in range(i+1, len(nums)):
                 if nums[i] + nums[j] == target:
                     return [i, j]
-        return [0, 0]
+        return []
+
+    def twoSum_solution2(self, nums: list[int], target: int) -> list[int]:
+        for i in range(len(nums)):
+            val = target - nums[i]
+            if val in nums[i+1:]:
+                return[i, nums[i+1:].index(val)+i+1]
+        return []
 
 
-print(Solution().twoSum([2, 4, 7, 15], 9))
+# print(Solution().twoSum([2, 4, -7, 15], 9))
+print(Solution().twoSum_solution2([-1, -2, -3, -4, -5], -8))
