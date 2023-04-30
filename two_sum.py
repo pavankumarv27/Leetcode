@@ -44,7 +44,7 @@ class Solution:
         for i in range(len(nums)):
             val = target - nums[i]
             if val in nums[i+1:]:
-                return[i, nums[i+1:].index(val)+i+1]
+                return[i, nums[i+1:].index(val) + i+1]
         return []
 
 
